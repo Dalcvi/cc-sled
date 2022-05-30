@@ -1,0 +1,21 @@
+[
+  {
+    "appName": "rpc-workshop.pages.index",
+    "notifications": {
+      "slack_channels": [
+        "rpc-workshop-urgent"
+      ]
+    },
+    "deploy_annotations": [
+      "rpc-workshop",
+      "business-manager"
+    ],
+    "petri_annotations": {
+      "scopes": [
+        "business-manager",
+        "bm-apps-2a2b0dbe-9e00-445c-a9ac-19318de1359c"
+      ]
+    },
+    "ignore_first_request_roundtrip": true
+  }
+]

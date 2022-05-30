@@ -1,0 +1,95 @@
+{
+  "name": "@wix/rpc-workshop",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "author": {
+    "name": "Dalius Cvilikas",
+    "email": "daliusc@wix.com"
+  },
+  "scripts": {
+    "start": "yoshi-flow-bm start",
+    "build": "yoshi-flow-bm build",
+    "test": "yarn test:unit && yarn test:sled",
+    "test:unit": "yoshi-flow-bm test",
+    "test:sled": "sled-test-runner remote",
+    "lint": "yoshi-flow-bm lint",
+    "preview": "yoshi-flow-bm previewLink"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": "yarn lint"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^11.2.5",
+    "@types/chance": "^1.0.6",
+    "@types/node": "^16.0.0",
+    "@types/react": "^16.9.0",
+    "@wix/sled-test-runner": "^1.0.0",
+    "@wix/yoshi-flow-bm": "^6.0.0",
+    "husky": "~4.2.1",
+    "lint-staged": "^10.0.7",
+    "puppeteer": "^5.5.0",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
+    "typescript": "~4.6.0"
+  },
+  "dependencies": {
+    "wix-style-react": "^9.0.0"
+  },
+  "resolutions": {
+    "@types/react": "^16.9.0"
+  },
+  "jest": {
+    "preset": "@wix/yoshi-flow-bm"
+  },
+  "perfer": {
+    "bundleSize": {
+      "files": [
+        {
+          "glob": "./dist/statics/*.min.js",
+          "maxSize": "200kb"
+        },
+        {
+          "glob": "./dist/statics/module.bundle.min.js",
+          "maxSize": "20kb"
+        },
+        {
+          "glob": "./dist/statics/module.dev.bundle.min.js",
+          "maxSize": "20kb"
+        }
+      ]
+    }
+  },
+  "wix": {
+    "artifact": {
+      "platforms": [
+        "business-manager"
+      ],
+      "groupId": "com.wixpress",
+      "artifactId": "rpc-workshop",
+      "targets": {
+        "static": true
+      }
+    },
+    "validations": {
+      "source": [
+        "lint"
+      ],
+      "postDependenciesBuild": [
+        "test:unit"
+      ],
+      "postBuild": [
+        "preview",
+        "test:sled"
+      ]
+    }
+  },
+  "wallaby": {
+    "autoDetect": true
+  }
+}

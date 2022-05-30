@@ -1,0 +1,18 @@
+{
+  "$schema": "target/schemas/.application.schema.json",
+  "moduleId": "RPC_WORKSHOP",
+  "appDefinitionId": "2a2b0dbe-9e00-445c-a9ac-19318de1359c",
+  "isCoreService": true,
+  "routeNamespace": "rpc-workshop",
+  "translations": {
+    "enabled": true
+  },
+  "sentry": {
+    "DSN": "https://cdf77fafe6fd4f158684602bcab119ce@sentry.wixpress.com/3485",
+    "id": "cdf77fafe6fd4f158684602bcab119ce",
+    "projectName": "rpc-workshop-q2",
+    "teamName": "rpc-workshop-dc",
+    "errorMonitor": true
+  },
+  "enabledByExperiments": ["specs.infra.yoshi-bm.ChangeMe"]
+}
