@@ -1,25 +1,30 @@
 import React from 'react';
+import { fetchComments } from '../api/comments.api';
 import { render } from '@testing-library/react';
-import { PageHeaderTestkit } from 'wix-style-react/dist/testkit';
 import { testkit } from '@wix/yoshi-flow-bm/testkit';
-import Index from './index';
+import { whenRequest } from '@wix/yoshi-flow-bm/testkit/http-client';
+import MyComponent from '.';
 
-describe('index', () => {
+describe('MyComponent', () => {
   testkit.beforeAndAfter();
 
-  beforeEach(() => testkit.reset());
-
-  it('renders a title correctly', async () => {
-    const { TestComponent } = testkit.getBMComponent(Index);
-    const { baseElement, findByTestId } = render(<TestComponent />);
-
-    await findByTestId('app-title');
-
-    const pageHeaderTestkit = PageHeaderTestkit({
-      wrapper: baseElement,
-      dataHook: 'app-title',
+  it('renders initial comments', async () => {
+    const { TestComponent } = testkit.getBMComponent(MyComponent, {
+      mocks: [
+        whenRequest(fetchComments)
+          .withData('')
+          .reply(200, () => {
+            return [
+              { text: 'hello world', author: 'me' },
+              { text: 'hello world2', author: 'me2' },
+            ];
+          }),
+      ],
     });
 
-    expect(await pageHeaderTestkit.exists()).toBe(true);
+    const { findAllByTestId } = render(<TestComponent />);
+
+    const comments = await findAllByTestId('text');
+    expect(comments).toHaveLength(2);
   });
 });

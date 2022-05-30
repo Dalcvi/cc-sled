@@ -14,5 +14,7 @@
     "teamName": "rpc-workshop-dc",
     "errorMonitor": true
   },
-  "enabledByExperiments": ["specs.infra.yoshi-bm.ChangeMe"]
+  "enabledByExperiments": [
+    "specs.infra.yoshi-bm.ChangeMe"
+  ]
 }

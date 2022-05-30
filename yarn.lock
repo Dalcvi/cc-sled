@@ -6833,6 +6833,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@wix/ambassador-node-workshop-scala-app@npm:^1.0.25":
+  version: 1.0.25
+  resolution: "@wix/ambassador-node-workshop-scala-app@npm:1.0.25::__archiveUrl=https%3A%2F%2Frepo.dev.wixpress.com%2Fartifactory%2Fapi%2Fnpm%2Fnpm-repos%2F%40wix%2Fambassador-node-workshop-scala-app%2F-%2F%40wix%2Fambassador-node-workshop-scala-app-1.0.25.tgz"
+  peerDependencies:
+    "@wix/ambassador": "*"
+  checksum: b41733e53f1d50ca74e14ca6ebb6a168435b0a08730e0c929fb3f6032bd13f0e9e0f774acaf211e683b1bcc153e5d6f741ced8632cb2e4380e93d03bff3255f1
+  languageName: node
+  linkType: hard
+
 "@wix/ambassador-service-discovery-server@npm:^1.0.183":
   version: 1.0.196
   resolution: "@wix/ambassador-service-discovery-server@npm:1.0.196::__archiveUrl=https%3A%2F%2Frepo.dev.wixpress.com%2Fartifactory%2Fapi%2Fnpm%2Fnpm-repos%2F%40wix%2Fambassador-service-discovery-server%2F-%2F%40wix%2Fambassador-service-discovery-server-1.0.196.tgz"
@@ -6855,7 +6864,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wix/ambassador-testkit@npm:^5.0.343, @wix/ambassador-testkit@npm:^5.0.346":
+"@wix/ambassador-testkit@npm:^5.0.343, @wix/ambassador-testkit@npm:^5.0.346, @wix/ambassador-testkit@npm:^5.0.347":
   version: 5.0.347
   resolution: "@wix/ambassador-testkit@npm:5.0.347::__archiveUrl=https%3A%2F%2Frepo.dev.wixpress.com%2Fartifactory%2Fapi%2Fnpm%2Fnpm-repos%2F%40wix%2Fambassador-testkit%2F-%2F%40wix%2Fambassador-testkit-5.0.347.tgz"
   dependencies:
@@ -7873,8 +7882,12 @@ __metadata:
     "@types/chance": ^1.0.6
     "@types/node": ^16.0.0
     "@types/react": ^16.9.0
+    "@wix/ambassador": ^4.0.541
+    "@wix/ambassador-node-workshop-scala-app": ^1.0.25
+    "@wix/ambassador-testkit": ^5.0.347
     "@wix/sled-test-runner": ^1.0.0
     "@wix/yoshi-flow-bm": ^6.0.0
+    "@wix/yoshi-serverless-testing": ^6.11.0
     husky: ~4.2.1
     lint-staged: ^10.0.7
     puppeteer: ^5.5.0
@@ -11226,7 +11239,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wix/yoshi-serverless-testing@npm:6.11.0":
+"@wix/yoshi-serverless-testing@npm:6.11.0, @wix/yoshi-serverless-testing@npm:^6.11.0":
   version: 6.11.0
   resolution: "@wix/yoshi-serverless-testing@npm:6.11.0::__archiveUrl=https%3A%2F%2Frepo.dev.wixpress.com%2Fartifactory%2Fapi%2Fnpm%2Fnpm-repos%2F%40wix%2Fyoshi-serverless-testing%2F-%2F%40wix%2Fyoshi-serverless-testing-6.11.0.tgz"
   dependencies:

@@ -39,6 +39,10 @@
     "typescript": "~4.6.0"
   },
   "dependencies": {
+    "@wix/ambassador": "^4.0.541",
+    "@wix/ambassador-node-workshop-scala-app": "^1.0.25",
+    "@wix/ambassador-testkit": "^5.0.347",
+    "@wix/yoshi-serverless-testing": "^6.11.0",
     "wix-style-react": "^9.0.0"
   },
   "resolutions": {

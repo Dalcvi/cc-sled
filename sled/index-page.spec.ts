@@ -9,21 +9,11 @@ import { TextTestkit } from 'wix-style-react/dist/testkit/puppeteer';
 describe('happy flow', () => {
   let _page: Page;
 
-  const SLED_DEFAULT_MSID = 'eeaf3519-1406-45f0-a8ea-a59a4ecbc1a6';
+  const SLED_DEFAULT_MSID = '98052e09-66e7-40eb-9926-15808ef039d0';
 
   beforeEach(async () => {
     const { page } = await sled.newPage({
-      authType: 'free-user', // TODO: This is a shared user, Change that! See: https://bo.wix.com/wix-docs/fe-guild/infra/sled/getting-started/test-user
-
-      experiments: [
-        {
-          // TODO: Replace with your own experiment
-          // For more information, visit:
-          // https://bo.wix.com/pages/yoshi/docs/business-manager-flow/deployment#experiments
-          key: 'specs.infra.yoshi-bm.ChangeMe',
-          val: 'true',
-        },
-      ],
+      authType: 'free-user',
     });
 
     _page = page;
@@ -46,13 +36,12 @@ describe('happy flow', () => {
     }
   });
 
-  it('should render dashboard home for authenticated user', async () => {
+  it('should render comments', async () => {
     const textTestkit = await TextTestkit({
       page: _page,
-      dataHook: 'get-started',
+      dataHook: 'text',
     });
 
-    const text = await textTestkit.getText();
-    expect(text).toMatch(/Get started .+here.+/);
+    expect(await textTestkit.exists()).toBe(true);
   });
 });
